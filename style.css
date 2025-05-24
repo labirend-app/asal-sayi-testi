@@ -1,0 +1,156 @@
+:root {
+  --primary: #4361ee;
+  --secondary: #3a0ca3;
+  --dark: #1b263b;
+  --light: #f8f9fa;
+  --success: #4cc9f0;
+  --error: #ff6767;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1b263b 0%, #415a77 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative; /* Dil seçimi için referans */
+}
+
+/* Yeni eklenen dil seçim stili */
+.language-top {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.language-top select {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.language-top select:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 40px; /* Dil seçimi için boşluk */
+}
+
+/* Diğer stiller aynı kalıyor... */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  color: var(--light);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#prompt {
+  color: var(--light);
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+#result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#result.show {
+  opacity: 1;
+}
+
+.prime {
+  background: rgba(76, 201, 240, 0.2);
+  color: var(--success);
+}
+
+.not-prime {
+  background: rgba(247, 37, 133, 0.2);
+  color: var(--error);
+}
+
+.signature {
+  text-align: center;
+  margin-top: 30px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Labirend Asal Sayı Testi</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Dil seçimi sağ üst köşede -->
@@ -16,21 +16,58 @@
     </select>
   </div>
 
-  <div class="container">
+  <div class="container"><br>
     <div class="glass-card">
-      <h1>Labirend Asal Sayı Testi</h1>
-      
-      <div class="input-section">
+      <header class="header">
+        <h1 id="title">Labirend Asal Sayı Testi</h1>
+      </header>
+
+      <!-- Input Section -->
+      <section class="input-section" style="padding-bottom: 5px;">
         <p id="prompt">Bir sayı giriniz:</p>
         <input type="number" id="numberInput" placeholder="Ör: 17">
         <button id="checkBtn">KONTROL ET</button>
         <div id="result"></div>
-      </div>
+      </section>
+
+      <!-- Info Section -->
+      <section class="info-section">
+        <h2 id="infoTitle">Labirend Asal Sayı Testi Nedir?</h2>
+        <div id="infoText">
+          <p>
+            Bu testin algoritması Doğan Acar tarafından yazılmıştır. Matematikte yaygın olarak kullanılan çoğu asal sayı algoritmasından farklı olarak Labirend Asal Sayı Testi'nde bir sayının asal sayı olup olmadığını %100 kesinlik oranıyla öğrenme imkanına sahibiz.
+          </p>
+        </div>
+        
+        <h2 id="infoTitle">Temel Algoritma Yapısı (JavaScript)</h2>
+        <pre><code id="algorithmCode"></code></pre>
+      </section>
+
+      <!-- Blockchain Proof -->
+      <section class="blockchain-section">
+        <h2 id="infoTitle">Blockchain Kanıtı</h2>
+        <p id="blockchainText">
+          Bu algoritma, 23 Mayıs 2025 tarihinde OpenTimestamps ile Bitcoin blockchain sistemine kaydedilmiştir. Bu zaman damgası, algoritmanın özgünlüğünü ve sahipliğini kriptografik olarak kanıtlar.
+        </p>
+        <hr style="border: 1px solid #85abcc56; margin-bottom: 40px;">
+        <div class="grid-container">
+          <div>
+            <h3 id="hashTitle">SHA256 Hash</h3>
+            <p class="hash-value">d1979c1af28c481aed3aaa798db40be7379fecd04515adbf9d306bf09d933fa3</p>
+          </div>
+          <div>
+            <h3 id="otsTitle">OTS Dosyası</h3>
+            <p>
+              <a href="timeStamp.ots" id="otsDownload" download>OTS dosyasını indir</a>
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
     
-    <div class="signature">
-      <p>© 2025 Doğan Acar</p>
-    </div>
+    <footer class="footer">
+      <p>© 2025 Doğan Acar. Tüm hakları saklıdır.</p>
+    </footer>
   </div>
 
   <script src="script.js"></script>

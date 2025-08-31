@@ -5,6 +5,10 @@
   --light: #f8f9fa;
   --success: #4cc9f0;
   --error: #ff6767;
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-light: rgba(255, 255, 255, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.6);
 }
 
 * {
@@ -21,68 +25,91 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  position: relative; /* Dil seçimi için referans */
+  position: relative;
+  color: var(--text-light);
+  line-height: 1.6;
 }
 
-/* Yeni eklenen dil seçim stili */
 .language-top {
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 10;
+  z-index: 100;
 }
 
 .language-top select {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: none;
+  background: rgba(255, 255, 255, 0.221);
+  color: rgb(196, 213, 241);
+  border: 1px solid var(--glass-border);
   padding: 8px 15px;
   border-radius: 50px;
   cursor: pointer;
   outline: none;
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .language-top select:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(29, 36, 70, 0.512);
 }
 
 .container {
   width: 100%;
-  max-width: 500px;
-  margin-top: 40px; /* Dil seçimi için boşluk */
+  max-width: 800px;
+  margin-top: 40px;
 }
 
-/* Diğer stiller aynı kalıyor... */
 .glass-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 30px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 45px;
 }
 
 h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
   color: var(--light);
-  font-size: 1.8rem;
-  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: var(--success);
+  margin: 25px 0 15px;
+}
+
+h3 {
+  font-size: 0.9rem;
+  color: var(--light);
+  margin-bottom: 10px;
+}
+
+.input-section {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  border-radius: 15px;
   margin-bottom: 30px;
   text-align: center;
 }
 
-.input-section {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
 #prompt {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
   color: var(--light);
-  font-size: 1rem;
-  opacity: 0.9;
 }
 
 input {
@@ -92,8 +119,10 @@ input {
   border-radius: 10px;
   color: white;
   font-size: 1.1rem;
+  width: 200px;
   outline: none;
   transition: all 0.3s ease;
+  margin-right: 10px;
 }
 
 input:focus {
@@ -109,13 +138,12 @@ button {
   background: var(--primary);
   color: white;
   border: none;
-  padding: 15px;
+  padding: 15px 30px;
   border-radius: 10px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 10px;
 }
 
 button:hover {
@@ -125,9 +153,9 @@ button:hover {
 
 #result {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 15px;
   border-radius: 10px;
-  text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
   opacity: 0;
@@ -144,13 +172,75 @@ button:hover {
 }
 
 .not-prime {
-  background: rgba(247, 37, 133, 0.2);
+  background: rgba(247, 37, 37, 0.2);
   color: var(--error);
 }
 
-.signature {
+.info-section, .blockchain-section {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px 25px 25px 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+pre {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.hash-value {
+  font-family: monospace;
+  word-break: break-all;
+  color: var(--success);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+#otsDownload {
+  color: var(--primary); /* Mevcut renk */
+  /* Yeni renk örneği: */
+  color: #4cc9f0; 
+}
+
+.footer {
   text-align: center;
   margin-top: 30px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+  
+  .glass-card {
+    padding: 20px;
+  }
 }
